@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key});
+  const ProductItem({super.key, required this.imageUrl});
+
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class ProductItem extends StatelessWidget {
           ),
           SizedBox(height: 12),
 
-          Expanded(child: Image.asset("assets/images/careemy.png")),
+          Expanded(child: Image.asset(imageUrl)),
           SizedBox(height: 17),
 
           Text(

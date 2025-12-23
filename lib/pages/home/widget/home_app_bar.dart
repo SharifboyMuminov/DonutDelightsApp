@@ -1,3 +1,4 @@
+import 'package:donut_delights_app/pages/product/search_products_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -5,10 +6,10 @@ class HomeAppBar extends SliverPersistentHeaderDelegate {
   @override
   Widget build(context, shrinkOffset, overlapsContent) {
     return Container(
-
       color: Colors.white,
       padding: EdgeInsets.all(12),
       child: SafeArea(
+        bottom: false,
         child: Row(
           children: [
             IconButton(
@@ -32,6 +33,23 @@ class HomeAppBar extends SliverPersistentHeaderDelegate {
                   prefixIconConstraints: BoxConstraints(
                     minWidth: 14,
                     minHeight: 14,
+                  ),
+                  suffixIconConstraints: BoxConstraints(
+                    minWidth: 14,
+                    minHeight: 14,
+                  ),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return ProductsPage();
+                          },
+                        ),
+                      );
+                    },
+                    icon: SvgPicture.asset("assets/icons/search.svg"),
                   ),
                   prefixIcon: Padding(
                     padding: const EdgeInsets.only(left: 16),

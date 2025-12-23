@@ -31,30 +31,27 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        top: false,
-        child: CustomScrollView(
-          controller: _scrollController,
-          slivers: [
-            SliverPersistentHeader(pinned: true, delegate: HomeAppBar()),
-            SliverPersistentHeader(delegate: GreetingUser()),
-            SliverPersistentHeader(
-              pinned: true,
-              delegate: CategoriesView(
-                activeCategoryIndex: _activeCategoryIndex,
-                selectCategory: (int value) {
-                  setState(() {
-                    _activeCategoryIndex = value;
-                  });
-                },
-              ),
+      body: CustomScrollView(
+        controller: _scrollController,
+        slivers: [
+          SliverPersistentHeader(pinned: true, delegate: HomeAppBar()),
+          SliverPersistentHeader(delegate: GreetingUser()),
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: CategoriesView(
+              activeCategoryIndex: _activeCategoryIndex,
+              selectCategory: (int value) {
+                setState(() {
+                  _activeCategoryIndex = value;
+                });
+              },
             ),
+          ),
 
-            PopularBakeriesView(),
+          PopularBakeriesView(),
 
-            HomeProductView(),
-          ],
-        ),
+          HomeProductView(),
+        ],
       ),
     );
   }
