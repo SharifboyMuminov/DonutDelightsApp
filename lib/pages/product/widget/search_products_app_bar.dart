@@ -1,3 +1,4 @@
+import 'package:donut_delights_app/pages/cart/cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -50,7 +51,16 @@ class SearchProductsAppBar extends StatelessWidget {
               width: 40,
               height: 40,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return CartPage();
+                      },
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.zero,
                   shape: RoundedRectangleBorder(
