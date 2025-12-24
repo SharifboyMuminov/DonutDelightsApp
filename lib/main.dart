@@ -1,4 +1,3 @@
-import 'package:donut_delights_app/pages/home/home_page.dart';
 import 'package:donut_delights_app/pages/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Color(0xFFF9F9F9)),
-      home: const HomePage(),
-      // home: const SplashPage(),
+      // home: const HomePage(),
+      home: const SplashPage(),
     );
   }
 }
