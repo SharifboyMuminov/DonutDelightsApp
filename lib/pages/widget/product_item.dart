@@ -3,9 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key, required this.imageUrl});
+  const ProductItem({
+    super.key,
+    required this.imageUrl,
+    required this.onPressed,
+  });
 
   final String imageUrl;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +18,7 @@ class ProductItem extends StatelessWidget {
       padding: EdgeInsets.zero,
       color: Colors.white,
       borderRadius: BorderRadius.circular(20),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Column(
         children: [
           SizedBox(width: context.width),

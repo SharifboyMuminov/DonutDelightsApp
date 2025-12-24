@@ -1,5 +1,5 @@
+import 'package:donut_delights_app/pages/product/detail_product_page.dart';
 import 'package:donut_delights_app/pages/widget/product_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeProductView extends StatefulWidget {
@@ -22,7 +22,19 @@ class _HomeProductViewState extends State<HomeProductView> {
       padding: EdgeInsets.only(right: 20, left: 20, bottom: 140),
       sliver: SliverGrid(
         delegate: SliverChildBuilderDelegate((context, index) {
-          return ProductItem(imageUrl: _imagePaths[index % 3]);
+          return ProductItem(
+            imageUrl: _imagePaths[index % 3],
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return DetailProductPage(imagePath: _imagePaths[index % 3]);
+                  },
+                ),
+              );
+            },
+          );
         }, childCount: 20),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
